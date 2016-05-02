@@ -1,10 +1,10 @@
 import React, { PropTypes } from 'react';
 
-import { Change, Clear } from '../reducers/personReducer';
+import { Change, ConfirmedClear } from '../reducers/personReducer';
 
 export default function PersonEditForm({ person, dispatch }) {
     const onChange = data => dispatch({ type: Change, data: data });
-    const onClear = () => dispatch({ type: Clear });
+    const onClear = () => dispatch({ type: ConfirmedClear });
 
     return (<div>
             <div>
