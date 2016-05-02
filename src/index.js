@@ -6,9 +6,9 @@ import createLogger from 'redux-logger';
 
 import SinlgePersonEditApplication
     from './containers/SinlgePersonEditApplication';
-import personReducer from './reducers/personReducer';
+import singlePersonEditReducer from './reducers/singlePersonEditReducer';
 
-const store = createStore(personReducer, applyMiddleware(createLogger()));
+const store = createStore(singlePersonEditReducer, applyMiddleware(createLogger()));
 
 ReactDom.render(
     <Provider store={store}>
