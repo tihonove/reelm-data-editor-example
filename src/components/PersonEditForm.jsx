@@ -1,6 +1,11 @@
 import React, { PropTypes } from 'react';
 
-export default function PersonEditForm({ person, onChange, onClear }) {
+import { Change, Clear } from '../reducers/personReducer';
+
+export default function PersonEditForm({ person, dispatch }) {
+    const onChange = data => dispatch({ type: Change, data: data });
+    const onClear = () => dispatch({ type: Clear });
+
     return (<div>
             <div>
                 First name:
@@ -20,6 +25,5 @@ export default function PersonEditForm({ person, onChange, onClear }) {
 
 PersonEditForm.propTypes = {
     person: PropTypes.object.isRequired,
-    onChange: PropTypes.func.isRequired,
-    onClear: PropTypes.func.isRequired,
+    dispatch: PropTypes.func.isRequired,
 };
